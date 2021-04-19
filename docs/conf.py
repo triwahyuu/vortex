@@ -23,7 +23,8 @@ copyright = '2021, Nodeflux'
 author = 'Nodeflux'
 
 # The full version, including alpha/beta/rc tags
-release = '0.3'
+from vortex.development.version import __version__
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -39,10 +40,19 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.autosectionlabel',
     'sphinx_gallery.gen_gallery',
+    "sphinx_multiversion",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = [
+    '_templates'
+]
+
+html_sidebars = {
+    '**': [
+        'versions.html',
+    ],
+}
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -98,6 +108,24 @@ todo_include_todos = True
 # Introduction that appears in document index.rst. Useful for avoiding 
 # ambiguity when the same section heading appears in different documents.
 autosectionlabel_prefix_document = True
+
+
+# -- Options for 'sphinx-multiversion' extension ------------------------------
+
+# Whitelist pattern for tags (set to None to ignore all tags)
+smv_tag_whitelist = r'^v.*$'
+
+# Whitelist pattern for branches (set to None to ignore all branches)
+smv_branch_whitelist = r'^master$'
+
+# Pattern for released versions
+smv_released_pattern = r'^tags/v.*$'
+
+# Whitelist pattern for remotes (set to None to use local branches only)
+smv_remote_whitelist = None
+
+# Format for versioned output directories inside the build directory
+smv_outputdir_format = '{ref.name}'
 
 
 # sphinx-gallery configuration
