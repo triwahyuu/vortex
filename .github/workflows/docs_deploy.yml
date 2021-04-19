@@ -30,7 +30,7 @@ jobs:
           make -C docs clean
           make -C docs html
       - name: Deploy Docs
-        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'release'
+        # if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'release'
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@users.noreply.github.com"
