@@ -1,0 +1,148 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // "justMyCode": false
+        },
+        {
+            "name": "pytest current",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "--no-cov", "-x", "-v", "${file}"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "test",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "--no-cov", "-v", "-s", "-x",
+                "${workspaceFolder}/tests/models/test_backbone.py::test_backbone_class_export"
+                // "${workspaceFolder}/tests/pipelines/test_trainer.py::test_checkpoint_save_epoch"
+            ],
+            // "justMyCode": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "playground",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/playground/playground.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "learning rate",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/visualize_learning_rate.py",
+            "args": [
+                // "--config", "experiments/configs/efficientnet_b0_classification_stl10.yml"
+                "--config", "playground/efficientnet_b3_classification_cifar10.yml"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src/development:${workspaceFolder}/src/runtime:${env:PYTHONPATH}"
+            }
+        },
+        {
+            "name": "onnx check",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/export_check/onnx_check.py",
+            "args": [
+                "--opset-version", "11", "--models", "softmax"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src/development:${workspaceFolder}/src/runtime:${env:PYTHONPATH}"
+            }
+        },
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/development/vortex/development/cli.py",
+            "args": [
+                "train", "--no-log",
+                "playground/efficientnet_b0_classification_cifar10.yml", 
+                // "--config", "playground/detr/detr.yml",
+                // "--resume",
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src/development:${workspaceFolder}/src/runtime:${env:PYTHONPATH}"
+            }
+        },
+        {
+            "name": "validate",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/development/vortex/development/vortex_cli.py",
+            "args": [
+                "validate",
+                "--config", "playground/detr.yml"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src/development:${workspaceFolder}/src/runtime:${env:PYTHONPATH}"
+            }
+        },
+        {
+            "name": "predict",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/development/vortex/development/vortex_cli.py",
+            "args": [
+                "predict",
+                // "--config", "experiments/configs/efficientnet_b0_classification_cifar10.yml", 
+                // "--weight", "experiments/outputs/efficientnet_b0_softmax_cifar10/g2onjycvvdjc2f9vj723ydkuisx7i0sj/efficientnet_b0_softmax_cifar10.pth",
+                // "--image", "~/dataset/sample/cifar/airplane.jpg",
+                "--config", "experiments/configs/shufflenetv2x100_retinaface_frontal_fddb_640.yml", 
+                "--weight", "experiments/outputs/shufflenetv2x100_retinaface_frontal_fddb_640/shufflenetv2x100_retinaface_frontal_fddb_640.pth",
+                "--image", "~/dataset/sample/face.jpg"
+            ],
+            "console": "integratedTerminal",
+            // "justMyCode": false
+        },
+        {
+            "name": "export",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/development/vortex/development/vortex_cli.py",
+            "args": [
+                "export",
+                "--config", "experiments/configs/efficientnet_b0_classification_cifar10.yml"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src/development:${workspaceFolder}/src/runtime:${env:PYTHONPATH}"
+            }
+        },
+        {
+            "name": "pl",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/playground/pl/model.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src/development:${workspaceFolder}/src/runtime:${env:PYTHONPATH}"
+            },
+            "justMyCode": false
+        }
+    ],
+}

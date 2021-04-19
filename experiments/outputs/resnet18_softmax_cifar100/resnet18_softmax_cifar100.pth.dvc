@@ -1,3 +1,0 @@
-outs:
-- md5: 10fede25a865a4fb41a6ad68bfba7f50
-  path: resnet18_softmax_cifar100.pth

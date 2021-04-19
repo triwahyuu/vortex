@@ -1,3 +1,0 @@
-outs:
-- md5: 6368c1062d16709d373a67785a607818
-  path: shufflenetv2x100_softmax_cifar100.pth

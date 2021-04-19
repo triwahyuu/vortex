@@ -1,3 +1,0 @@
-outs:
-- md5: 26f12fed7408bebbfdb2d9b6270c8683
-  path: efficientnet_lite0_softmax_cifar10.pth

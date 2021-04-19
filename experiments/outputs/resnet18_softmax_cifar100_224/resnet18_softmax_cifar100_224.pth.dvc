@@ -1,3 +1,0 @@
-outs:
-- md5: 20c0bee3c8fc4920df6cc60a252f06f1
-  path: resnet18_softmax_cifar100_224.pth

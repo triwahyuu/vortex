@@ -1,3 +1,0 @@
-outs:
-- md5: bc791423935588190ae5a21845b17af3
-  path: efficientnet_lite0_softmax_stl10.pth

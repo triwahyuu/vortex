@@ -1,3 +1,0 @@
-outs:
-- md5: 22f481a1f966e188b4b9b7b1cc99779e
-  path: shufflenetv2x200_fpn_ssd_voc2007_512.pth

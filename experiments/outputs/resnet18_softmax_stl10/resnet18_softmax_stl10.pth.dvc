@@ -1,3 +1,0 @@
-outs:
-- md5: 497cbe020997dca32d8df5ce2e534d96
-  path: resnet18_softmax_stl10.pth

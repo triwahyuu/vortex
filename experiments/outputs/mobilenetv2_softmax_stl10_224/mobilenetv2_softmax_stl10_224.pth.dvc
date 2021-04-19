@@ -1,3 +1,0 @@
-outs:
-- md5: 7f5812d53160da68f2b0a9c7cec25dc1
-  path: mobilenetv2_softmax_stl10_224.pth

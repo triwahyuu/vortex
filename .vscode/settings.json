@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "/home/triwahyuu/virtualenvs/vortex-dev/bin/python",
+    "files.watcherExclude": {
+        "build/**": true,
+        "experiments/**": true,
+        "external/datasets/**": true
+    },
+    "python.analysis.extraPaths": [
+        "/home/triwahyuu/work/vortex-mine/src/development",
+        "/home/triwahyuu/work/vortex-mine/src/runtime"
+    ],
+    "restructuredtext.languageServer.disabled": true,
+    "restructuredtext.confPath": "${workspaceFolder}/docs"
+}
