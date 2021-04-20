@@ -38,5 +38,5 @@ jobs:
           rm -rf /tmp/gh-pages && cp -r docs/_build/html /tmp/gh-pages
           git fetch --all && git checkout gh-pages
           rm -rf * && cp -r /tmp/gh-pages/* ./ && rm -rf /tmp/gh-pages
-          touch README.md && echo "built from ${GITHUB_SHA}" >> README.md
+          touch README.md && echo "built from ${GITHUB_SHA}" >> README.md && touch .nojekyll
           git add . && git commit -m "Updated gh-pages" && git push && git checkout master
