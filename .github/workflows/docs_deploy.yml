@@ -39,5 +39,5 @@ jobs:
           git fetch --all && git checkout gh-pages
           for dirname in /tmp/gh-pages/*; do cp -TR $dirname $(basename $dirname); done
           rm -rf /tmp/gh-pages && rm README.md .nojekyll
-          touch README.md .nojekyll && echo "built from `${GITHUB_SHA}`" >> README.md
+          touch README.md .nojekyll && echo "built from ${GITHUB_SHA}" >> README.md
           git add . && git commit -m "Updated gh-pages" && git push origin gh-pages && git checkout master
